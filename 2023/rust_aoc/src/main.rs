@@ -1,3 +1,5 @@
+mod t01;
 fn main() {
-    println!("Hello, world!");
+    let result = t01::main();
+    println!("{result}")
 }
