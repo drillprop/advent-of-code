@@ -4,12 +4,12 @@ pub fn main() -> u32 {
     let contents =
         fs::read_to_string("./src/t01/input.txt").expect("Should have been able to read the file");
 
-    let numbers: u32 = contents.lines().map(find_numbers).sum();
+    let result: u32 = contents.lines().map(find_first_and_last_numbers).sum();
 
-    numbers
+    result
 }
 
-fn find_numbers(s: &str) -> u32 {
+fn find_first_and_last_numbers(s: &str) -> u32 {
     let parts = s.chars();
     let mut extracted_number = "".to_owned();
 
