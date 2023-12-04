@@ -1,24 +1,18 @@
-use std::fs;
+use crate::utils;
 
 pub fn day01_a() -> u32 {
-    let contents = get_content();
+    let contents = utils::get_content("./src/day01/input.txt");
     let result: u32 = contents.lines().map(find_first_and_last_numbers).sum();
     result
 }
 
 pub fn day01_b() -> u32 {
-    let contents = get_content();
+    let contents = utils::get_content("./src/day01/input.txt");
     let result: u32 = contents
         .lines()
         .map(find_first_and_last_numbers_spelled_out_with_letters)
         .sum();
     result
-}
-
-fn get_content() -> String {
-    let contents = fs::read_to_string("./src/day01/input.txt")
-        .expect("Should have been able to read the file");
-    contents
 }
 
 fn find_first_and_last_numbers_spelled_out_with_letters(s: &str) -> u32 {
