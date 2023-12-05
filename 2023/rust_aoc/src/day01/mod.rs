@@ -1,12 +1,12 @@
 use crate::utils;
 
-pub fn day01_a() -> u32 {
+pub fn a() -> u32 {
     let contents = utils::get_content("./src/day01/input.txt");
     let result: u32 = contents.lines().map(find_first_and_last_numbers).sum();
     result
 }
 
-pub fn day01_b() -> u32 {
+pub fn b() -> u32 {
     let contents = utils::get_content("./src/day01/input.txt");
     let result: u32 = contents
         .lines()

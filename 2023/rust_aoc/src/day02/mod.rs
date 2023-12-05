@@ -1,13 +1,13 @@
 use crate::utils;
 
-pub fn day02_a() -> i32 {
+pub fn a() -> i32 {
     let contents = utils::get_content("./src/day02/input.txt");
 
     let result: i32 = contents.lines().map(count_if_possible).sum();
     result
 }
 
-pub fn day02_b() -> i32 {
+pub fn b() -> i32 {
     let contents = utils::get_content("./src/day02/input.txt");
 
     let result: i32 = contents.lines().map(power_games_with_fewest_games).sum();
