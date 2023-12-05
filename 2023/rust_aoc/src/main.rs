@@ -8,7 +8,7 @@ fn main() {
     let result = day01::day01_b();
     println!("day1 b: {result}");
     let result = day02::day02_a();
-    println!("day2: {result}");
+    println!("day2 a: {result}");
     let result = day02::day02_b();
-    println!("day2: {result}");
+    println!("day2 b: {result}");
 }

@@ -6,11 +6,31 @@ pub fn day02_a() -> i32 {
     let result: i32 = contents.lines().map(count_if_possible).sum();
     result
 }
+
 pub fn day02_b() -> i32 {
     let contents = utils::get_content("./src/day02/input.txt");
 
-    let result: i32 = contents.lines().map(count_if_possible).sum();
-    // todo
+    let result: i32 = contents.lines().map(power_games_with_fewest_games).sum();
+    result
+}
+
+fn power_games_with_fewest_games(s: &str) -> i32 {
+    let game = s.split_once(&[':']).map_or(s, |(_game_id, game)| game);
+
+    let cubes_vector: Vec<Cubes> = game
+        .split_terminator([';'])
+        .map(|str| extract_cubes(str))
+        .collect();
+
+    let reds = cubes_vector.iter().map(|cube| cube.red).max().unwrap_or(1);
+    let green = cubes_vector
+        .iter()
+        .map(|cube| cube.green)
+        .max()
+        .unwrap_or(1);
+    let blue = cubes_vector.iter().map(|cube| cube.blue).max().unwrap_or(1);
+
+    let result = reds * green * blue;
     result
 }
 
