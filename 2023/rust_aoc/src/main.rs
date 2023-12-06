@@ -13,7 +13,7 @@ fn main() {
     let result = day02::b();
     println!("day2 b: {result}");
     let result = day03::a();
-    println!("day2 a: {result}");
+    println!("day3 a: {result}");
     let result = day03::b();
-    println!("day2 b: {result}");
+    println!("day3 b: {result}");
 }
